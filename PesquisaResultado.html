@@ -59,13 +59,13 @@
             let card =`
               <div class="col-md-4 col-sm-4">
                 <div class="card h-100">
-                      <img src="assets/pictures/${(researcher_scout[0][count]).picture}" class="card-img-top" alt="...">
+                      <img src="assets/pictures/${researcher_scout[count].picture}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">${(researcher_scout[0][count]).nome}</h5>
-                        <p class="card-text">${(researcher_scout[0][count]).descricao}</p>
+                        <h5 class="card-title">${researcher_scout[count].nome}</h5>
+                        <p class="card-text">${researcher_scout[count].descricao}</p>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-primary" onclick="detalhes(${(researcher_scout[0][count]).id})">mais informações</button>
+                        <button type="button" class="btn btn-primary" onclick="detalhes(${researcher_scout[count].id})">mais informações</button>
                       </div>
                     </div>
                   </div>
