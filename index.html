@@ -47,16 +47,27 @@
 
 <div class="container">
   <div class="row">
-      <h4 class="mb-3">Encontre o PC certo para você</h4>
-      <form id="ProductForm">
-        <div class="mb-3">
-          <label for="inputSearch" class="form-label">Vamos começar sua busca</label>
-          <input type="search" class="form-control" id="inputSearch" name="nome" placeholder="Digite aqui as características do computador que você quer">
+    <h4 class="mb-3">Encontre o PC certo para você</h4>
+    <form id="ProductForm">
+      <div class="mb-3">
+        <label class="form-label">Selecione o nível de performance</label>
+        <div>
+          <input type="radio" id="performance1" name="performance" value="1">
+          <label for="performance1">1 (Baixa)</label>
         </div>
-        <div class="text-center mt-4">
-          <button class="btn btn-primary" type="submit" onclick=ResultadoDaPesquisa()>Submit</button>
+        <div>
+          <input type="radio" id="performance2" name="performance" value="2">
+          <label for="performance2">2 (Média)</label>
         </div>
-      </form>
+        <div>
+          <input type="radio" id="performance3" name="performance" value="3">
+          <label for="performance3">3 (Alta)</label>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary" type="submit" onclick="ResultadoDaPesquisa()">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
 <script>

@@ -142,13 +142,14 @@ function Researcher(){
 
   const carrinhoDeBusca = [];
   const searchedItem = JSON.parse(localStorage.getItem('searched_item'));
-  const carrier = JSON.parse(localStorage.getItem('carrier'));
+  const carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
-  console.log(searchedItem.nome);
+  console.log(searchedItem.performance);
+  console.log(carrinho);
 
-  for (const key in carrier) {
-    if (carrier.hasOwnProperty(key)) {
-      if (carrier[key].nome.includes(searchedItem.nome)) {
+  for (const key in carrinho) {
+    if (carrinho.hasOwnProperty(key)) {
+      if (carrinho[key].performance.includes(searchedItem.performance)) {
         carrinhoDeBusca.push(carrier[key]);
       }
     }
