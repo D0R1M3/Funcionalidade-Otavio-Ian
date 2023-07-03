@@ -142,6 +142,7 @@ function SendToJson2(NewObject){
 
 function Researcher(){
 
+  const carrinhoDeBusca_indicator = [];
   const carrinhoDeBusca = [];
   const searchedItem = JSON.parse(localStorage.getItem('searched_item'));
   const carrinho = JSON.parse(localStorage.getItem('carrinho'));
@@ -154,15 +155,44 @@ function Researcher(){
 
   for (let count = 0; count < carrinho.length; count++) {
     if (carrinho[count].performance.toString() === searchedItem.performance) {
-      carrinhoDeBusca.push(carrinho[count].produtos);
+      carrinhoDeBusca_indicator.push(carrinho[count].produtos);
       console.log('INSERTION FLAG');
     }
   }
-  localStorage.setItem('CarrinhoDeBusca', JSON.stringify(carrinhoDeBusca));
-}
+  localStorage.setItem('carrinhoDeBusca_indicator', JSON.stringify(carrinhoDeBusca_indicator));
 
-var researcher_scout = JSON.parse(localStorage.getItem('CarrinhoDeBusca')) || [];
-console.log(researcher_scout);
+
+  const carrier_carrier = JSON.parse(localStorage.getItem('carrier'));
+
+
+  console.log(carrinhoDeBusca_indicator);
+  console.log(carrier_carrier[0].id);
+  console.log(carrinhoDeBusca_indicator[0][0]);
+
+
+  for (let count = 0; count < carrinhoDeBusca_indicator[0].length; count++) {
+
+    console.log('upper_laco');
+    
+
+    for (let count2 = 0; count2 < carrier_carrier.length; count2++) {
+
+      console.log(carrier_carrier[count2].id);
+      console.log((carrinhoDeBusca_indicator[0][count]));
+
+      if (carrier_carrier[count2].id === (carrinhoDeBusca_indicator[0][count])) {
+
+        carrinhoDeBusca.push(carrier_carrier[count2]);
+        console.log('INSERTION FLAG 2');
+     }
+   }
+  }
+  localStorage.setItem('carrinhoDeBusca', JSON.stringify(carrinhoDeBusca));
+  console.log(carrinhoDeBusca);
+} 
+
+//var researcher_scout = JSON.parse(localStorage.getItem('CarrinhoDeBusc_indicator')) || [];
+//console.log(researcher_scout_indicator);
 
 
 
