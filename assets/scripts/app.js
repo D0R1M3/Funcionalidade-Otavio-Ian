@@ -191,7 +191,7 @@ function Researcher(){
   console.log(carrinhoDeBusca);
 } 
 
-//var researcher_scout = JSON.parse(localStorage.getItem('CarrinhoDeBusc_indicator')) || [];
+var researcher_scout = JSON.parse(localStorage.getItem('carrinhoDeBusca')) || [];
 //console.log(researcher_scout_indicator);
 
 
