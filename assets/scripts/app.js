@@ -27,7 +27,9 @@ fetch('./assets/data/carrinho.json')
 .then(data => {
     carts = data.map(cart => {
     return { 
+        id:cart.id,
         produtos:cart.produtos,
+        performance: cart.performance
     }
     });
     console.log(carts);
@@ -145,20 +147,21 @@ function Researcher(){
   const carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
   console.log(searchedItem.performance);
-  console.log(carrinho);
+  console.log(carrinho[2].performance);
 
-  for (const key in carrinho) {
-    if (carrinho.hasOwnProperty(key)) {
-      if (carrinho[key].performance.includes(searchedItem.performance)) {
-        carrinhoDeBusca.push(carrier[key]);
-      }
+  console.log(typeof searchedItem.performance);
+  console.log(typeof carrinho[2].performance);
+
+  for (let count = 0; count < carrinho.length; count++) {
+    if (carrinho[count].performance.toString() === searchedItem.performance) {
+      carrinhoDeBusca.push(carrinho[count].produtos);
+      console.log('INSERTION FLAG');
     }
   }
   localStorage.setItem('CarrinhoDeBusca', JSON.stringify(carrinhoDeBusca));
-
 }
 
-var researcher_scout = JSON.parse(localStorage.getItem('CarrinhoDeBusca'));
+var researcher_scout = JSON.parse(localStorage.getItem('CarrinhoDeBusca')) || [];
 console.log(researcher_scout);
 
 
